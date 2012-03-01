@@ -1,0 +1,110 @@
+/*Styles common for both HTML and BODY.*/
+html,body
+{
+margin:0px;
+padding:0px;
+font-size:12px;
+line-height:18px;
+}
+
+body
+{
+background-image:url('../images/background.jpg');
+}
+
+/*Styles of the container div*/
+#container
+{
+width:960px;
+margin:auto;
+}
+
+/*Styles of the main navigation menu*/
+#main-nav
+{
+height:75px;
+}
+
+.underlinemenu{
+font-weight: bold;
+font-size:30px;
+width: 100%;
+background-color:#0EA34F;
+height:40px;
+}
+
+.underlinemenu ul{
+padding: 11px 0 7px 0; /*6px should equal top padding of "ul li a" below, 7px should equal bottom padding + bottom border of "ul li a" below*/
+margin: 0;
+text-align: center; /*set value to "left", "center", or "right"*/
+}
+
+.underlinemenu ul li{
+display: inline;
+}
+
+.underlinemenu ul li a{
+color: #494949;
+padding: 6px 3px 4px 3px; /*top padding is 6px, bottom padding is 4px*/
+margin-right: 50px; /*spacing between each menu link*/
+text-decoration: none;
+/*border-bottom: 3px solid gray; /*bottom border is 3px*/
+}
+
+.underlinemenu ul li a:hover, .underlinemenu ul li a.selected{
+border-bottom-color: black;
+}
+
+/*Header styles*/
+#header
+{
+height:275px;
+}
+
+/*Styles of the sidebar.*/
+#sidebar
+{
+width:225px;
+float:left;
+//border:1px solid black;
+}
+
+#sidebar ul#side-bar-navigation
+{
+width:12em;
+padding:5px;
+}
+
+#sidebar ul#side-bar-navigation li
+{
+list-style:none;
+}
+
+#sidebar ul#side-bar-navigation li a
+{
+display:block;
+}
+
+#sidebar ul#side-bar-navigation li a:hover {color:red;font-size:110%;}
+
+#sidebar ul#side-bar-navigation li a:active {color:red;font-size:120%}
+
+#sidebar ul#side-bar-navigation li a:focus {color:red;font-size:120%}
+
+
+/*Styles of the main content.*/
+#content
+{
+margin-left:240px;
+//border:1px solid black;
+width:720px;
+}
+
+/*Footer Styles*/
+#footer
+{
+background-color:#0EA34F;
+height:40px;
+clear:both;
+margin:25px 0 10px 0;
+}
