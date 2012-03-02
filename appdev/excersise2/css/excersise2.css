@@ -1,0 +1,124 @@
+/*Styles common for both HTML and BODY.*/
+html,body
+{
+margin:0px;
+padding:0px;
+font-size:12px;
+line-height:18px;
+}
+
+body
+{
+background-image:url('../images/background.jpg');
+}
+
+/*Styles of the container div*/
+#container
+{
+max-width:960px;
+margin:auto;
+}
+
+/*Styles of the main navigation menu*/
+#main-nav
+{
+height:40px;
+width:960px;
+}
+
+.underlinemenu{
+font-weight: bold;
+font-size:30px;
+width: 100%;
+background-color:#0EA34F;
+height:40px;
+}
+
+.underlinemenu ul{
+padding: 11px 0 7px 0; 
+margin: 0;
+text-align: center; /*set value to "left", "center", or "right"*/
+}
+
+.underlinemenu ul li{
+display: inline;
+}
+
+.underlinemenu ul li a{
+color: #494949;
+padding: 6px 3px 4px 3px; /*top padding is 6px, bottom padding is 4px*/
+margin-right: 50px; /*spacing between each menu link*/
+text-decoration: none;
+}
+
+.underlinemenu ul li a:hover, .underlinemenu ul li a.selected{
+border-bottom-color: black;
+}
+
+/*Header styles*/
+#header
+{
+height:275px;
+}
+
+div#resize-helper
+{
+width:100%;
+position:relative;
+}
+
+/*Styles of the sidebar.*/
+#sidebar
+{
+width:175px;
+//float:right;
+margin-top:15px;
+position:absolute;
+right:0;
+}
+
+#sidebar ul#side-bar-navigation
+{
+padding:5px;
+margin:0;
+}
+
+#sidebar ul#side-bar-navigation li
+{
+list-style:none;
+}
+
+#sidebar ul#side-bar-navigation li a
+{
+display:block;
+margin:10px 0px;
+font-size:15px;
+color:#4BA335;
+}
+
+#sidebar ul#side-bar-navigation li a:hover {color:#31881B;font-size:125%;}
+
+#sidebar ul#side-bar-navigation li a:focus {color:#306423;font-size:170%}
+
+
+/*Styles of the main content.*/
+#content
+{
+//float:left;
+width:75%;
+margin-right:250px;
+}
+
+#content p
+{
+text-indent:30px;
+}
+
+/*Footer Styles*/
+#footer
+{
+background-color:#0EA34F;
+height:40px;
+clear:both;
+margin:25px 0 10px 0;
+}
