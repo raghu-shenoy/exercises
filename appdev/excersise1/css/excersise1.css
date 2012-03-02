@@ -22,7 +22,7 @@ margin:auto;
 /*Styles of the main navigation menu*/
 #main-nav
 {
-height:75px;
+height:40px;
 }
 
 .underlinemenu{
@@ -34,7 +34,7 @@ height:40px;
 }
 
 .underlinemenu ul{
-padding: 11px 0 7px 0; /*6px should equal top padding of "ul li a" below, 7px should equal bottom padding + bottom border of "ul li a" below*/
+padding: 11px 0 7px 0; 
 margin: 0;
 text-align: center; /*set value to "left", "center", or "right"*/
 }
@@ -48,7 +48,6 @@ color: #494949;
 padding: 6px 3px 4px 3px; /*top padding is 6px, bottom padding is 4px*/
 margin-right: 50px; /*spacing between each menu link*/
 text-decoration: none;
-/*border-bottom: 3px solid gray; /*bottom border is 3px*/
 }
 
 .underlinemenu ul li a:hover, .underlinemenu ul li a.selected{
@@ -66,13 +65,14 @@ height:275px;
 {
 width:225px;
 float:left;
-//border:1px solid black;
+margin-top:15px;
 }
 
 #sidebar ul#side-bar-navigation
 {
-width:12em;
+width:215px;
 padding:5px;
+margin:0;
 }
 
 #sidebar ul#side-bar-navigation li
@@ -83,21 +83,29 @@ list-style:none;
 #sidebar ul#side-bar-navigation li a
 {
 display:block;
+margin:10px 0px;
+font-size:15px;
+width:220px;
+color:#4BA335;
 }
 
-#sidebar ul#side-bar-navigation li a:hover {color:red;font-size:110%;}
+#sidebar ul#side-bar-navigation li a:hover {color:#31881B;font-size:125%;}
 
-#sidebar ul#side-bar-navigation li a:active {color:red;font-size:120%}
+/*#sidebar ul#side-bar-navigation li a:active {color:red;font-size:150%}*/
 
-#sidebar ul#side-bar-navigation li a:focus {color:red;font-size:120%}
+#sidebar ul#side-bar-navigation li a:focus {color:#306423;font-size:170%}
 
 
 /*Styles of the main content.*/
 #content
 {
-margin-left:240px;
-//border:1px solid black;
+margin:25px 0 0 240px;
 width:720px;
+}
+
+#content p
+{
+text-indent:30px;
 }
 
 /*Footer Styles*/
