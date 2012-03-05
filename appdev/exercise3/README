@@ -1,0 +1,7 @@
+Comaptible best with Firefox.
+
+
+
+Used absolute position to position semi-transperent image wrt to realative parent 'content' div.
+
+Used negative margins to overlap images. 
