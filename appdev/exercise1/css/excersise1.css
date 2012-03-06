@@ -15,7 +15,7 @@ background-image:url('../images/background.jpg');
 /*Styles of the container div*/
 #container
 {
-width:960px;
+max-width:960px;//Else the content div does not resize wrt browser resize.
 margin:auto;
 }
 
@@ -23,6 +23,7 @@ margin:auto;
 #main-nav
 {
 height:40px;
+width:960px;
 }
 
 .underlinemenu{
@@ -58,6 +59,7 @@ border-bottom-color: black;
 #header
 {
 height:275px;
+width:960px;
 }
 
 /*Styles of the sidebar.*/
@@ -65,7 +67,7 @@ height:275px;
 {
 width:225px;
 float:left;
-margin-top:15px;
+margin:15px 0 0 5px;
 }
 
 #sidebar ul#side-bar-navigation
@@ -95,12 +97,16 @@ color:#4BA335;
 
 #sidebar ul#side-bar-navigation li a:focus {color:#306423;font-size:170%}
 
+div#content-container
+{
+width:100%;
+}
 
 /*Styles of the main content.*/
 #content
 {
-margin:25px 0 0 240px;
-width:720px;
+margin:25px 10px 0 225px;
+width:75%;
 }
 
 #content p
@@ -113,6 +119,7 @@ text-indent:30px;
 {
 background-color:#0EA34F;
 height:40px;
+width:960px;
 clear:both;
 margin:25px 0 10px 0;
 }
