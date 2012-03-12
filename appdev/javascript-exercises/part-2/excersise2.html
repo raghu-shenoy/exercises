@@ -1,0 +1,47 @@
+<!doctype html>
+ <html lang="en"> 
+ <head>
+   <meta charset="UTF-8">
+   <title>Todo Application</title>
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <script type="text/javascript" src="javascript/app.js"></script>
+   <link href="css/master.css" type="text/css" rel="stylesheet">
+ </head>
+ <body>
+    
+	<div id='container'>
+		
+		<div id='header'>
+			<img src="images/todo.jpg" alt="Time Table" height="300" width="960" />
+		</div>
+		
+		<div id='content'>
+			
+			<div id='google-search'>
+				<form method="get" target="_blank" action="http://www.google.com/search">
+					<input type="text" name="q" size="20" maxlength="255" value="" />
+					<input type="submit" value="Google Search" />
+				</form>
+			</div>
+			
+				<div id='page-headers'>
+					 <h1 id='listCount'>Todos(0)</h1>
+					 <h2>What needs to get done today?</h2><span id = 'currentTime'></span>
+				</div>
+			<div id='toDo-container'>
+				<textarea name="toDo" rows="5" cols="75"></textarea>
+				<br/>
+				<input type="button" value="Add Todo" onclick='addList()'>
+				<br/>
+			</div>
+
+			 
+			 
+			 <ol id="list">
+			 </ol>		 
+		 </div>
+		 
+	</div>
+ </body>
+ </html>
