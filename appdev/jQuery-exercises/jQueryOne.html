@@ -1,0 +1,168 @@
+ Sample Html with elements
+  Draw a Solid Red border on the selected elements e.g. $("selector").css("border", "3px solid red");
+
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <title>Document</title>
+  <script src="lib/jquery.js"></script>
+  <script type="text/javascript">
+      $("document").ready(function() {
+          // Example
+          // Use basic selectors, basic filters, attribute selectors, content filters, hierarchy filters
+          var button1_handler1 = function() {
+									$("*").css("border", "3px solid blue");
+								}
+		  var button1_handler2 = function() {
+									$("*").css("border", "");
+								}
+          $('#button1').toggle(button1_handler1,button1_handler2); 
+          
+                   
+          
+          var button2_handler1 = function() {
+									$("p").css("border", "3px solid red");
+											}
+		  var button2_handler2 = function() {
+									$("p").css("border", "");	
+											}
+								      
+          $('#button2').toggle(button2_handler1,button2_handler2);
+          
+          
+          
+          var button3_handler1 = function() {
+									$(".a").css("border", "3px solid yellow");
+											}
+		  var button3_handler2 = function() {
+									$(".a").css("border", "");	
+											}
+								      
+          $('#button3').toggle(button3_handler1,button3_handler2);  
+          
+                  
+           
+          var button4_handler1 = function() {
+									$("[id]").css("border", "3px solid pink");
+											}
+		  var button4_handler2 = function() {
+									$("[id]").css("border", "");	
+											}
+								      
+          $('#button4').toggle(button4_handler1,button4_handler2); 
+          
+          
+          var button5_handler1 = function() {
+									$("li").first().css("border", "3px solid orange");
+											}
+		  var button5_handler2 = function() {
+									$("li").first().css("border", "");	
+											}
+								      
+          $('#button5').toggle(button5_handler1,button5_handler2);   
+          
+          
+          
+          var button6_handler1 = function() {
+									$("ul#list1 li:even").css("border", "3px solid violet");
+											}
+		  var button6_handler2 = function() {
+									$("ul#list1 li:even").css("border", "");	
+											}
+								      
+          $('#button6').toggle(button6_handler1,button6_handler2);
+                        
+          
+                       
+		  var button7_handler1 = function() {
+									$("ul#list1 li:odd").css("border", "3px solid green");
+											}
+		  var button7_handler2 = function() {
+									$("ul#list1 li:odd").css("border", "");	
+											}
+								      
+          $('#button7').toggle(button7_handler1,button7_handler2);
+                        
+          
+                       
+		  var button8_handler1 = function() {
+									$(":empty").css("border", "3px solid cyan");
+											}
+		  var button8_handler2 = function() {
+									$(":empty").css("border", "");	
+											}
+								      
+          $('#button8').toggle(button8_handler1,button8_handler2);                        
+                       
+								      
+                      
+		  var button9_handler1 = function() {
+									$(":not(:empty)").css("border", "3px solid black");
+											}
+		  var button9_handler2 = function() {
+									$(":not(:empty)").css("border", "");	
+											}
+								      
+          $('#button9').toggle(button9_handler1,button9_handler2);                        
+                                              
+								      
+          var hidden_elements = $(":hidden")            
+		  var button10_handler1 = function() {
+									hidden_elements.show().css("border", "3px solid magenta");
+											}
+		  var button10_handler2 = function() {
+									hidden_elements.hide().css("border", "");							
+											}
+								      
+          $('#button10').toggle(button10_handler1,button10_handler2);   
+          
+          
+          var button11_handler1 = function() {
+									$("#parent").children().css("border", "3px solid black");
+											}
+		  var button11_handler2 = function() {
+									$("#parent").children().css("border", "");
+											}
+								      
+          $('#button11').toggle(button11_handler1,button11_handler2); 
+
+      });
+  </script>
+  <style type="text/css">
+  .a { color: Navy; }
+  .b { color: Maroon; }
+  </style>
+  </head>
+  <body>
+	  <div id='parent'>
+		  <ul id="list1">
+			  <li class="a">item 1</li>
+			  <li class="a">item 2</li>
+			  <li class="b">item 3</li>
+			  <li class="b">item 4</li>
+			  <li class="a"></li>
+			  <li class="b"></li>
+		  </ul>
+		  <p class="a">This is paragraph 1</p>
+		  <p>This is paragraph 2</p>
+      </div>
+      <p class="b">This is paragraph 3</p>
+      <p>This is paragraph 4</p>
+      <p></p>
+      <p></p>
+      <p style="display: none;"></p>
+      <div style="display: none;"></div>
+      <!-- Add multiple buttons for each selector -->
+      <input type="button" id="button1" value="Select All" />
+      <input type="button" id="button2" value="Select All Ps" />
+      <input type="button" id="button3" value="Select 'a' class" />
+      <input type="button" id="button4" value="Select Elemnts with id" />
+      <input type="button" id="button5" value="Select First item in list" />
+      <input type="button" id="button6" value="Select Even item in list" />
+      <input type="button" id="button7" value="Select Odd item in list" />
+      <input type="button" id="button8" value="Select all Empty Items" />
+      <input type="button" id="button9" value="Select all Non-Empty Items" />
+      <input type="button" id="button10" value="Select All hidden elements" />
+      <input type="button" id="button11" value="Select Children of '#parent' div" />
+  </body>
+  </html>
+
