@@ -16,13 +16,13 @@
 				$('#evtTarget').unbind('mouseenter mouseleave',handler);
 			 });
 			 
-			/* $('#trigger_click').toggle(function(){
+			 $('#trigger_click_outside').toggle(function(){
 				$('#evtTarget').trigger('click');
-				$('#trigger_click').val('Bind Again');
+				$('#trigger_click_outside').val('Bind Again');
 			 },function(){
 				$('#evtTarget').on('mouseenter mouseleave', handler);
-				$('#trigger_click').val('Unbind Using Trigger');
-			 });*/
+				$('#trigger_click_outside').val('Unbind Using Trigger');
+			 });
 			 
 			 $('#evtTarget').children('div').delegate('input:button','click',function(event){
 							 $('#trigger_click').toggle(
@@ -42,10 +42,12 @@
       <style type='text/css'>
           .normal {
               width: 300px;
-              height: 200px;
+              height: 350px;
               background-color: Yellow;
               font-size: 18pt;
+              border: 3px solid black;
           }
+          
 
           .highlighted {
               background-color: Red;
@@ -57,10 +59,13 @@
   <div id="evtTarget" class="normal">
 	This is parent div.Mouse over this div to see the effect. Click on it to unbind the mouseover.
 	<div id='child'>
-		This is child div to show delegation.<br/>
+		-------------------------------------------
+		This is child div to show delegation.But, since the event bubbles up to the parent div, the button has to be clicked twice.<br/>
 		<input type='button' id='trigger_click' value='Unbind Using Trigger' />
 	</div>
   </div>
+  <input type='button' id='trigger_click_outside' value='Unbind Using Trigger outside div' />
   <br /> 
   </body>
   </html>
+
