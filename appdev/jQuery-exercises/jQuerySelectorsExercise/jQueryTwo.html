@@ -1,0 +1,215 @@
+Sample Form Html -
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Using Form Selectors and Filters</title>
+      <script src='lib/jquery.js'></script>
+      <script type="text/javascript">
+          $("document").ready(function() {
+			  button1_handler1 = function() {
+                  $("form :input").css("border", "3px solid red");
+              }
+              button1_handler2 = function() {
+                  $("form :input").css("border", "");
+              };
+              $('#button1').toggle(button1_handler1,button1_handler2);
+             
+          
+             button2_handler1 = function() {
+                  $("form input:checkbox").css("outline", "3px solid blue");
+              };
+             button2_handler2 = function() {
+                  $("form input:checkbox").css("outline", "");
+              };
+              $('#button2').toggle(button2_handler1,button2_handler2);
+              
+              
+          
+             button3_handler1 = function() {
+                  $("form input:radio").css("outline", "3px solid yellow");
+              };
+             button3_handler2 = function() {
+                  $("form input:radio").css("outline", "");
+              };
+              $('#button3').toggle(button3_handler1,button3_handler2);
+              
+              
+          
+             button4_handler1 = function() {
+                  $("input:button").css("outline", "3px solid green");
+              };
+             button4_handler2 = function() {
+                  $("input:button").css("outline", "");
+              };
+              $('#button4').toggle(button4_handler1,button4_handler2);
+              
+              
+              
+          
+             button5_handler1 = function() {
+                  $("form input:submit").css("outline", "3px solid green");
+              };
+             button5_handler2 = function() {
+                  $("form input:submit").css("outline", "");
+              };
+              $('#button5').toggle(button5_handler1,button5_handler2);
+                                     
+          
+             button6_handler1 = function() {
+                  $("input:reset").css("border", "3px solid green");
+              };
+             button6_handler2 = function() {
+                  $("input:reset").css("border", "");
+              };
+              $('#button6').toggle(button6_handler1,button6_handler2);
+              
+                                     
+          
+             text_button_handler1 = function() {
+                  $("input:text").css("border", "3px solid maroon");
+              };
+             text_button_handler2 = function() {
+                  $("input:text").css("border", "");
+              };
+              $('#text_button').toggle(text_button_handler1,text_button_handler2);          
+                                                    
+          
+             disabled_text_button_handler1 = function() {
+                  $("input:text:disabled").css("border", "3px solid cyan");
+              };
+             disabled_text_button_handler2 = function() {
+                  $("input:text:disabled").css("border", "");
+              };
+              $('#disabled_text_button').toggle(disabled_text_button_handler1,disabled_text_button_handler2);    
+                                               
+          
+             checked_radio_button_handler1 = function() {
+                  $("input:radio:checked").css("outline", "3px solid magenta");
+              };
+             checked_radio_button_handler2 = function() {
+                  $("input:radio:checked").css("outline", "");
+              };
+              $('#checked_radio_button').toggle(checked_radio_button_handler1,checked_radio_button_handler2);                     
+              
+                          
+                          
+              rename_handler = function(){
+				  $(this).val('De-' + $(this).val());
+			  };
+				$('#button1').val().split('-')[1]
+				
+			 
+			  name_handler = function(){
+				  $(this).val($(this).val().split('-')[1]);
+			  };
+			 
+              $("input[type='button']").toggle(rename_handler,name_handler);    
+                   
+         });
+          
+      </script>
+      <style type="text/css">
+          .style1 {
+              width: 600px;
+          }
+
+          .style2 {
+              width: 200px;
+          }
+      </style>
+  </head>
+  <body>
+
+  <h1>
+      Example Form Document</h1>
+
+  <form action="" method="post">
+
+      <table class="style1">
+          <tbody>
+          <tr>
+              <td class="style2">
+                  First Name
+              </td>
+              <td>
+                  <input id="FirstName" type="text"/></td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  Last Name
+              </td>
+              <td>
+                  <input id="LastName" type="text"/></td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  Disabled Element
+              </td>
+              <td>
+                  <input id="Text1" type="text" disabled="disabled"/></td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  Gender
+              </td>
+              <td>
+                  <input id="Male" type="radio" checked="checked"/>M<input id="Female" type="radio"/>F
+              </td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  What products are you interested in?
+              </td>
+              <td>
+                  <input id="Checkbox1" type="checkbox" checked="checked"/><label for="Checkbox1">Widgets</label><br/>
+                  <input id="Checkbox2" type="checkbox"/><label for="Checkbox1">Hibbity Jibbities</label><br/>
+                  <input id="Checkbox3" type="checkbox" checked="checked"/><label
+                      for="Checkbox1">SplashBangers</label><br/>
+                  <input id="Checkbox4" type="checkbox"/><label for="Checkbox1">Whatzits</label></td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  Comments:
+              </td>
+              <td>
+                  <textarea id="Comments" cols="40" name="S1" rows="5"></textarea></td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  Optional life story file
+              </td>
+              <td>
+                  <input id="File1" type="file"/></td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  &nbsp;</td>
+              <td>
+                  &nbsp;</td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  &nbsp;</td>
+              <td>
+                  <input id="Submit1" type="submit" value="submit"/>
+                  <input id="Reset1" type="reset" value="reset"/></td>
+          </tr>
+          </tbody>
+      </table>
+
+  </form>
+  <input type="button" id="button1" value="Select All Form input"/>
+  <input type="button" id="button2" value="Select All Checkboxes"/>
+  <input type="button" id="button3" value="Select All Radio"/>
+  <input type="button" id="button4" value="Select All Buttons"/>
+  <input type="button" id="button5" value="Select Submit Button"/>
+  <input type="button" id="button6" value="Select Reset"/>
+  <input type="button" id="text_button" value="Select All Textboxes"/>
+  <input type="button" id="disabled_text_button" value="Select All Disabled Textboxes"/>
+  <input type="button" id="checked_radio_button" value="Select All Checked Radio Button"/>
+  <input type="button" id="checked_checkbox" value="Select All Checked Checkboxes"/>
+  </body>
+  </html>
+
