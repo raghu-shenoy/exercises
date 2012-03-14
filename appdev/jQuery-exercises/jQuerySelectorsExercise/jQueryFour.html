@@ -8,7 +8,7 @@
       <script type="text/javascript">
           $("document").ready(function() {
 
-			$('input:text').blur(function(){
+			$('form#example input:text').blur(function(){
 				alert('Focus lost.')
 			});
 			
@@ -48,7 +48,7 @@
 <body>
   <div class='description'>
 	<ul>
-		<li><span>Tab through the textboxes to checkout the alert due to blur().<span></li>
+		<li><span>Tab through the textboxes in the first form form to checkout the alert due to blur().<span></li>
 		<li><span>Click on the 'Focus Textarea' button to focus on the textarea.<span></li>
 		<li><span>Checking/Unchecking the checkboxes will fire the change event which throws up an alert.<span></li>
 		<li><span>Write some text in the textarea and select it. The select event gets fired.<span></li>
@@ -58,7 +58,7 @@
 
   <h1>Example Form Document</h1>
   
-  <form action="" method="post">
+  <form id='example' action="" method="post">
 
       <table class="style1">
           <tbody>
@@ -134,7 +134,7 @@
 
   </form>
   
-<h1>Form below will
+<h1>Form below will search on Google</h1>
 <form id='search-google' method="get" target="_blank" action="http://www.google.com/search">
 	<input type="text" name="q" size="35" maxlength="255" value="" />
 	
