@@ -1,0 +1,23 @@
+Using the HTML below, write a simple ToDo List application. Let the user enter text in the text field, and when the button is clicked, you should add a new list item with the new description. Make sure to also blank out the text area for the user, and use your styling skills to make it appealing to use!
+
+ <!doctype html>
+ <html lang="en"> 
+ <head>
+   <meta charset="UTF-8">
+   <title>Todo Application</title>
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <script type="text/javascript" src="javascript/app.js"></script>
+ </head>
+ <body>
+     <h1>Todos</h1>
+     <h2>What needs to get done today?</h2>
+     <input type="text" name="nameOfItem">
+     <br/>
+     <input type="button" value="Add Todo">
+     <br/>
+     <ol id="list">
+         <li>This is my first item to do!!</li>
+     </ol>
+ </body>
+ </html>

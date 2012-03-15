@@ -1,0 +1,134 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Document</title>
+      <script src='lib/jquery.js'></script>
+      <script type="text/javascript">
+          $("document").ready(function() {
+		  
+			//Display text in para with class 'a'.
+            $('#get-value').click(function(){
+				alert('The text in para is "' + $('p.a').text() + "\"");
+			}) ;
+			
+			//Display html enclosed withing the <ul> tag.
+            $('#get-html').click(function(){
+				alert('The html in unordered list is "' + $('ul#list1').html() + "\"");
+			}) ;	
+
+			//Append text to all the <p>s.
+			$("#append-text").click(function(){
+				$('p').append(" This text is appended.");
+			});
+			
+			
+			//Prepend text to all the <p>s.
+			$("#prepend-text").click(function(){
+				$('p').prepend(" This text is prepended.");
+			});
+			
+			
+			//Append a new li to the ul element by appending html markup.
+			$("#append-html").click(function(){
+				$("ul#list1").append("<li>New Li added here</li>");
+			});		
+	
+			
+			
+			$("#replace-text").click(function(){
+				$('p.b').replaceWith('<span>This replaced span</span>')
+			});		
+
+
+			$("#replace-html").click(function(){
+				$('p').last().replaceWith('<p style=\'font-size:18px;color:orange;border:3px solid black;\'>This replaced text.</p>');
+			});					
+
+
+			$("#display-attr-style").click(function(){
+				$("#replace-html").trigger('click');
+				alert($('p').last().attr('style'));
+			});		
+			
+
+			$("#new-line").one('click',function(){
+				$('input:button').after('<br/>');
+			});	
+			
+			
+			$('input[name=\'select-para\']').one('click',function(){
+				$('#replace-textarea').removeAttr('disabled');
+			});
+
+			$("#replace-textarea").on('click',function(){
+				$('#comments').val() ? $('input[name=\'select-para\']:checked')[0].nextSibling.textContent = $('#comments').val():alert('No new text to replace with!!!');
+				$('#comments').val('');
+			});			
+
+			
+			$("#toggle-style").toggle(function(){
+				$('ul#list1').addClass('list-style');
+				$(this).val('Remove the class');				
+			},function(){
+				$('ul#list1').removeClass('list-style');
+				$(this).val('Add class to the list.');
+			});		
+			
+						
+			$("#hide-list").toggle(function(){
+				$('ul#list1').attr('style','display:none;');
+				$(this).val('Show list');				
+			},function(){
+				$('ul#list1').attr('style','display:block;');
+				$(this).val('Hide list.');
+			});		
+			
+						
+			$("#wrap-html").click(function(){
+				$('p').wrap('<span class=\'c\' />');
+			});	
+
+									
+			$("#clone-list").click(function(){
+				$('ul#list1').clone().appendTo('div#list-container');
+			});	
+			
+          });
+      </script>
+      <style type="text/css">
+        .a { color: Navy; }
+        .b { color: Maroon; }
+		.c { color: Orange;}
+		.list-style {list-style:none;font-size:18px;color:blue;border:3px solid red;}
+      </style>
+  </head>
+  <body>
+		<div id='list-container'>
+			<ul id="list1">
+			  <li class="a">item 1</li>
+			  <li class="a">item 2</li>
+			  <li class="b">item 3</li>
+			  <li class="b">item 4</li>
+			</ul>
+		</div>
+		  
+      <p class="a"><input type='radio' name='select-para'/>This is paragraph 1</p>
+      <p><input type='radio' name='select-para'/>This is paragraph 2</p>
+      <p class="b"><input type='radio' name='select-para'/>This is paragraph 3</p>
+      <p><input type='radio' name='select-para'/>This is paragraph 4</p>
+	 <input type="button" id="new-line" value="Add a <br/> after all the buttons!!!" />
+	 <input type="button" id="get-value" value="Get text in para with class 'a'" />
+	 <input type="button" id="get-html" value="Get html inside the unordered list" />
+	 <input type="button" id="append-text" value="Append text to all the <p> elements. " />
+	  <input type="button" id="prepend-text" value="Prepend text to all the <p> elements. " />
+	 <input type="button" id="append-html" value="Append li to the ul using append() " />
+	 <input type="button" id="replace-text" value="Replace para3 with span " />
+	 <input type="button" id="replace-html" value="Replace text and style of text of the last <p> tag. " />
+	 <input type="button" id="display-attr-style" value="Display style of the last para(Triggers click to add style.)" /><br/>
+	 <textarea id="comments" cols="40" name="S1" rows="5">Add text here to replace the the text in the checked para</textarea>
+	 <input type="button" id="replace-textarea" value="Replace" disabled='disabled'/><br/>
+	 <input type="button" id='toggle-style' value='Add class to the list'/>
+	 <input type="button" id='hide-list' value='Hide list'/>
+	 <input type="button" id='wrap-html' value='Wrap span around all the <p>s.'/>
+	 <input type="button" id='clone-list' value='Clone list'/>
+  </body>
+  </html>

@@ -1,0 +1,198 @@
+Selectors
+Select all elements, elements of type, using element Id, element class
+Select using elements having attributes
+Select first, last, odd, even of List
+Select elements containing, empty, having elements
+Select hidden elements
+Select childs of Specific parents
+
+  Sample Html with elements
+  Draw a Solid Red border on the selected elements e.g. $("selector").css("border", "3px solid red");
+
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <title>Document</title>
+  <!-- Add JQuery here -->
+  <script type="text/javascript">
+      $("document").ready(function() {
+          // Example
+          // Use basic selectors, basic filters, attribute selectors, content filters, hierarchy filters
+          $('#button1').toggle(function() {
+              $("p").css("border", "3px solid red");
+          }, function() {
+              $("p").css("border", "");
+          });
+      });
+  </script>
+  <style type="text/css">
+  .a { color: Navy; }
+  .b { color: Maroon; }
+  </style>
+  </head>
+  <body>
+      <ul id="list1">
+          <li class="a">item 1</li>
+          <li class="a">item 2</li>
+          <li class="b">item 3</li>
+          <li class="b">item 4</li>
+      </ul>
+      <p class="a">This is paragraph 1</p>
+      <p>This is paragraph 2</p>
+      <p class="b">This is paragraph 3</p>
+      <p>This is paragraph 4</p>
+      <!-- Add multiple buttons for each selector -->
+      <input type="button" id="button1" value="Select All Ps" />
+  </body>
+  </html>
+Select form elements with input, buttons, text areas and Select
+
+  Sample Form Html -
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Using Form Selectors and Filters</title>
+      <!-- Add JQuery here -->
+      <script type="text/javascript">
+          $("document").ready(function() {
+              $('#button1').toggle(function() {
+                  $("form :input").css("border", "3px solid red");
+              }, function() {
+                  $("form :input").css("border", "");
+              });
+          });
+      </script>
+      <style type="text/css">
+          .style1 {
+              width: 600px;
+          }
+
+          .style2 {
+              width: 200px;
+          }
+      </style>
+  </head>
+  <body>
+
+  <h1>
+      Example Form Document</h1>
+
+  <form action="" method="post">
+
+      <table class="style1">
+          <tbody>
+          <tr>
+              <td class="style2">
+                  First Name
+              </td>
+              <td>
+                  <input id="FirstName" type="text"/></td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  Last Name
+              </td>
+              <td>
+                  <input id="LastName" type="text"/></td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  Disabled Element
+              </td>
+              <td>
+                  <input id="Text1" type="text" disabled="disabled"/></td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  Gender
+              </td>
+              <td>
+                  <input id="Male" type="radio" checked="checked"/>M<input id="Female" type="radio"/>F
+              </td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  What products are you interested in?
+              </td>
+              <td>
+                  <input id="Checkbox1" type="checkbox" checked="checked"/><label for="Checkbox1">Widgets</label><br/>
+                  <input id="Checkbox2" type="checkbox"/><label for="Checkbox1">Hibbity Jibbities</label><br/>
+                  <input id="Checkbox3" type="checkbox" checked="checked"/><label
+                      for="Checkbox1">SplashBangers</label><br/>
+                  <input id="Checkbox4" type="checkbox"/><label for="Checkbox1">Whatzits</label></td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  Comments:
+              </td>
+              <td>
+                  <textarea id="Comments" cols="40" name="S1" rows="5"></textarea></td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  Optional life story file
+              </td>
+              <td>
+                  <input id="File1" type="file"/></td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  &nbsp;</td>
+              <td>
+                  &nbsp;</td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  &nbsp;</td>
+              <td>
+                  <input id="Submit1" type="submit" value="submit"/>
+                  <input id="Reset1" type="reset" value="reset"/></td>
+          </tr>
+          </tbody>
+      </table>
+
+  </form>
+  <input type="button" id="button1" value="Select All Form input"/>
+  </body>
+  </html>
+Events
+Binding and unbinding events - bind, unbind, trigger, delegate
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Events with jQuery</title>
+      <script type="text/javascript">
+          $(function() {
+              // Bind highlight function on mouseover & mouseleave event on evtTarget element
+              // unbind highlight function on click event on evtTarget element
+          });
+
+          function highlight(evt) {
+              $("#evtTarget").toggleClass("highlighted");
+          }
+      </script>
+      <style type='text/css'>
+          .normal {
+              width: 300px;
+              height: 200px;
+              background-color: Yellow;
+              font-size: 18pt;
+          }
+
+          .highlighted {
+              background-color: Red;
+          }
+      </style>
+  </head>
+  <body>
+  <h1>Binding Event Example</h1>
+  <div id="evtTarget" class="normal">Mouse over this div to see the effect. Click on it to unbind the mouseover.</div>
+  </body>
+  </html>
+Convenient event helper methods - change, select, click, hover etc
+
+  Use the Form html example from above and associate events with the elements

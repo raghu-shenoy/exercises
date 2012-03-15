@@ -1,0 +1,9 @@
+Extend the application with the functionality below:
+
+Include a search box and button that will allow the user to start a google query from your page. It should essentially open a new browser to google with the search term already filled in.
+
+Add a count at the top right above the list of how many items are present and when the last item was added
+
+Add simple validation to the “Add Todo” text field to make sure there isn’t more than 200 characters in the description. If there is, then alert the user that it’s not allowed, but let them edit their content.
+
+Instead of just a numbered list, add checkboxes to the list items so the user can check them off!
