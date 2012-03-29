@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta name="generator" content=
+    "HTML Tidy for Windows (vers 14 February 2006), see www.w3.org">
+    <script src="http://code.jquery.com/jquery-latest.js" type=
+    "text/javascript">
+</script>
+    <script type="text/javascript" src=
+    "http://jzaefferer.github.com/jquery-validation/jquery.validate.js">
+</script>
+    <style type="text/css">
+* { font-family: Verdana; font-size: 96%; }
+    label { width: 10em; float: left; }
+    label.error { float: none; color: red; padding-left: .5em; vertical-align: top; }
+    p { clear: both; }
+    .submit { margin-left: 12em; }
+    em { font-weight: bold; padding-right: 1em; vertical-align: top; }
+    </style>
+    <script type="text/javascript">
+$(document).ready(function(){
+     jQuery.validator.addMethod("minReqd", function(value, elem, param) {
+    if($(".minReqd:checkbox:checked").length < 0){
+       return false;
+    }else {
+       return true;
+    }
+    },"You must select minimum one!"
+        );
+
+    $("#commentForm").validate({
+                        rules: {
+                                cname: "required",
+                                email: {
+                                        required: true,
+                                        cemail: true
+                                },
+                                password: {
+                                        required: true,
+                                        minlength: 5
+                                },
+                                confirm_password: {
+                                        required: true,
+                                        minlength: $('#password').val().length,
+                                        equalTo: "#password"
+                                },
+								/*minReqd: {
+										required: "#minReqd:checked",
+										minlength: 2 
+								}*/
+								
+                                
+                        },
+                        messages: {
+                                cname: "Please enter your name",
+                                cemail: "Please enter a valid email address",
+                                password: {
+                                        required: "Please provide a password",
+                                        minlength: "Your password must be at least 5 characters long"
+                                },
+                                confirm_password: {
+                                        required: "Please re-enter the above password",
+                                        minlength: "Your password must be at least 5 characters long",
+                                        equalTo: "Please enter the same password as above"
+                                }
+
+                        }
+        });
+    });
+    </script>
+    <title></title>
+  </head>
+  <body>
+    <form id="commentForm" method="get" action="" name="commentForm">
+      <fieldset>
+        <legend>A simple comment form with submit validation and default
+        messages</legend>
+        <p>
+          <label for="cname">Name</label> <em>*</em><input id="cname" name=
+          "cname" size="25" minlength="2">
+        </p>
+        <p>
+          <label for="cemail">E-Mail</label> <em>*</em><input id="cemail" name=
+          "cemail" size="25" class="required email">
+        </p>
+        <p>
+          <label for="password">Password</label> <input id="password" name=
+          "password" type="password">
+        </p>
+        <p>
+          <label for="confirm_password">Confirm password</label> <input id=
+          "confirm_password" name="confirm_password" type="password">
+        </p>
+        <p>
+          <label for="curl">URL</label> <input id="curl" name="url" size="25"
+          class="url" value="">
+        </p>
+		<!--
+        <div id='additionalInfo'>
+          <p>
+            <input id="type1" id="minReqd" name="minReqd" type="checkbox">min
+          </p>
+          <p>
+            <input id="type2"  id="minReqd" name="minReqd" type="checkbox">min
+          </p>
+          <p>
+            <input id="type3"  id="minReqd" name="minReqd" type="checkbox">min
+          </p><label class="error" for="minReqd" generated="true" style="display:none"> Atleast 2 should be selected</label>
+        </div>-->
+        <p>
+          <input class="submit" type="submit" value="Submit">
+        </p>
+      </fieldset>
+    </form>
+  </body>
+</html>
